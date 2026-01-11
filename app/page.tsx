@@ -1,65 +1,114 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { fetchProducts } from '@/lib/products';
+import ProductCard from '@/components/ProductCard';
 
-export default function Home() {
+export const revalidate = 60; // ISR: revalidar cada 60 segundos
+
+export default async function Home() {
+  const allProducts = await fetchProducts();
+  const featuredProducts = allProducts.filter(p => p.estado === 'disponible').slice(0, 6);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-b from-carbon-900 to-black">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 animate-fade-in">
+            UrbanKick
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto animate-slide-up">
+            Sneakers premium en Colombia. Autenticidad garantizada.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+            <Link
+              href="/catalogo"
+              className="btn-primary inline-block"
+            >
+              Ver Catálogo
+            </Link>
+            <a
+              href="https://wa.me/573216841147"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-block"
+            >
+              Contactar
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* Featured Products */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter">
+            Destacados
+          </h2>
+          <Link
+            href="/catalogo"
+            className="text-sm uppercase tracking-wider text-gray-400 hover:text-white transition-colors"
+          >
+            Ver todos →
+          </Link>
+        </div>
+
+        <div className="product-grid">
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.sku} product={product} />
+          ))}
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="bg-carbon-900 py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="text-4xl mb-4">✓</div>
+              <h3 className="text-xl font-bold uppercase mb-2">100% Originales</h3>
+              <p className="text-gray-400">
+                Todos nuestros productos son auténticos y verificados.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">📦</div>
+              <h3 className="text-xl font-bold uppercase mb-2">Pago Contra Entrega</h3>
+              <p className="text-gray-400">
+                En Pereira y Dosquebradas. Paga cuando recibas tu pedido.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">🚚</div>
+              <h3 className="text-xl font-bold uppercase mb-2">Envíos Nacionales</h3>
+              <p className="text-gray-400">
+                Llevamos tus sneakers a cualquier parte de Colombia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="bg-white text-black p-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-4">
+            ¿Buscas algo específico?
+          </h2>
+          <p className="text-lg mb-8 text-gray-700">
+            Contáctanos por WhatsApp y te ayudamos a encontrar el par perfecto.
+          </p>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://wa.me/573216841147"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block bg-black text-white font-bold py-3 px-8 uppercase tracking-wider hover:bg-gray-800 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Consultar Disponibilidad
           </a>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
