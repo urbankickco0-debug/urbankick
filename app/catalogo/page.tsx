@@ -51,12 +51,12 @@ function CatalogoContent() {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">
+      <h1 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">
         Catálogo
       </h1>
 
       {/* Filtros */}
-      <div className="mb-12 space-y-6">
+      <div className="mb-10 space-y-4">
         {/* Búsqueda */}
         <div>
           <input

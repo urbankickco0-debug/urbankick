@@ -30,15 +30,15 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <h3 className="text-lg font-bold group-hover:text-gray-300 transition-colors line-clamp-2">
+      <div className="space-y-1">
+        <h3 className="text-base font-bold group-hover:text-gray-300 transition-colors line-clamp-2">
           {product.nombre}
         </h3>
         
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-400 uppercase">{product.categoria}</span>
+          <span className="text-xs text-gray-500 uppercase tracking-wide">{product.categoria}</span>
           {product.precio && (
-            <span className="text-lg font-bold">
+            <span className="text-base font-bold">
               ${product.precio.toLocaleString('es-CO')}
             </span>
           )}

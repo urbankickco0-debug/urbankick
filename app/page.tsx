@@ -11,12 +11,12 @@ export default async function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-b from-carbon-900 to-black">
+      <section className="relative h-[60vh] flex items-center justify-center bg-black">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight mb-4 animate-fade-in">
             UrbanKick
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto animate-slide-up">
+          <p className="text-lg md:text-xl text-gray-500 mb-8 max-w-xl mx-auto animate-slide-up">
             Sneakers premium en Colombia. Autenticidad garantizada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
@@ -39,7 +39,7 @@ export default async function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-16">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter">
             Destacados
@@ -60,12 +60,12 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-carbon-900 py-20">
+      <section className="bg-carbon-900 py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="text-4xl mb-4">✓</div>
-              <h3 className="text-xl font-bold uppercase mb-2">100% Originales</h3>
+              <h3 className="text-lg font-bold uppercase mb-2">100% Originales</h3>
               <p className="text-gray-400">
                 Todos nuestros productos son auténticos y verificados.
               </p>
@@ -73,7 +73,7 @@ export default async function Home() {
 
             <div className="text-center">
               <div className="text-4xl mb-4">📦</div>
-              <h3 className="text-xl font-bold uppercase mb-2">Pago Contra Entrega</h3>
+              <h3 className="text-lg font-bold uppercase mb-2">Contra Entrega</h3>
               <p className="text-gray-400">
                 En Pereira y Dosquebradas. Paga cuando recibas tu pedido.
               </p>
@@ -81,7 +81,7 @@ export default async function Home() {
 
             <div className="text-center">
               <div className="text-4xl mb-4">🚚</div>
-              <h3 className="text-xl font-bold uppercase mb-2">Envíos Nacionales</h3>
+              <h3 className="text-lg font-bold uppercase mb-2">Envío Nacional</h3>
               <p className="text-gray-400">
                 Llevamos tus sneakers a cualquier parte de Colombia.
               </p>
@@ -91,7 +91,7 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-16">
         <div className="bg-white text-black p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-4">
             ¿Buscas algo específico?
