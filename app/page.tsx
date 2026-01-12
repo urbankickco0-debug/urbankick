@@ -20,17 +20,14 @@ export default async function Home() {
             Sneakers premium en Colombia. Autenticidad garantizada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-            <Link
-              href="/catalogo"
-              className="btn-primary inline-block"
-            >
+            <Link href="/catalogo" className="btn-primary">
               Ver Catálogo
             </Link>
             <a
               href="https://wa.me/573216841147"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-block"
+              className="btn-secondary"
             >
               Contactar
             </a>
