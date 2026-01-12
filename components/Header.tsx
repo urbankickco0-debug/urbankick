@@ -10,14 +10,14 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-40 bg-black/90 backdrop-blur-sm border-b border-carbon-800">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tighter uppercase">
+          <Link href="/" className="text-xl font-bold tracking-tight uppercase">
             UrbanKick
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className={`text-sm uppercase tracking-wider transition-colors ${
+              className={`text-sm uppercase tracking-wide transition-colors ${
                 pathname === '/' ? 'text-white' : 'text-gray-400 hover:text-white'
               }`}
             >

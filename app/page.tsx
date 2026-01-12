@@ -11,15 +11,16 @@ export default async function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-b from-carbon-900 to-black">
+      <section className="relative h-[70vh] flex items-center justify-center bg-black">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 animate-fade-in text-white">
             UrbanKick
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto animate-slide-up">
-            Sneakers premium en Colombia. Autenticidad garantizada.
+          <p className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto animate-slide-up font-light leading-relaxed">
+            Sneakers premium en Colombia. <br className="hidden md:block" />
+            <span className="text-white font-medium">Autenticidad garantizada.</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
             <Link href="/catalogo" className="btn-primary">
               Ver Catálogo
             </Link>
@@ -36,7 +37,7 @@ export default async function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-16">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter">
             Destacados
@@ -56,39 +57,30 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-carbon-900 py-20">
+      {/* Features Section - Minimalista */}
+      <section className="border-y border-white/10 bg-black py-12">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="text-4xl mb-4">✓</div>
-              <h3 className="text-xl font-bold uppercase mb-2">100% Originales</h3>
-              <p className="text-gray-400">
-                Todos nuestros productos son auténticos y verificados.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <div className="text-center py-4 md:py-0 px-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-2 text-white">100% Originales</h3>
+              <p className="text-sm text-gray-500">Autenticidad verificada</p>
             </div>
 
-            <div className="text-center">
-              <div className="text-4xl mb-4">📦</div>
-              <h3 className="text-xl font-bold uppercase mb-2">Pago Contra Entrega</h3>
-              <p className="text-gray-400">
-                En Pereira y Dosquebradas. Paga cuando recibas tu pedido.
-              </p>
+            <div className="text-center py-4 md:py-0 px-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-2 text-white">Contra Entrega</h3>
+              <p className="text-sm text-gray-500">Pereira y Dosquebradas</p>
             </div>
 
-            <div className="text-center">
-              <div className="text-4xl mb-4">🚚</div>
-              <h3 className="text-xl font-bold uppercase mb-2">Envíos Nacionales</h3>
-              <p className="text-gray-400">
-                Llevamos tus sneakers a cualquier parte de Colombia.
-              </p>
+            <div className="text-center py-4 md:py-0 px-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-2 text-white">Envío Nacional</h3>
+              <p className="text-sm text-gray-500">Todo Colombia</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-16">
         <div className="bg-white text-black p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-4">
             ¿Buscas algo específico?
